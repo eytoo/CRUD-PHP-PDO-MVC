@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $id = validar_campo($_GET["id"]);
 
         if (UsuarioControlador::eliminarUsuario($id)) {
-            header("location:crud_usuario.php");
+            header("location:index.php");
         }
 
     }
 } else {
-    header("location:crud_usuario.php?error=1");
+    header("location:index.php?error=1");
 }

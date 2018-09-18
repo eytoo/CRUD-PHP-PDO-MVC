@@ -16,11 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (isset($_POST["id"])) {
             if (UsuarioControlador::crearUsuario($txtNombre, $txtEmail, $txtUsuario, $txtPassword, $txtPrivilegio, validar_campo($_POST["id"]))) {
-                header("location:crud_usuario.php");
+                header("location:index.php");
             }
         } else {
             if (UsuarioControlador::crearUsuario($txtNombre, $txtEmail, $txtUsuario, $txtPassword, $txtPrivilegio, null)) {
-                header("location:crud_usuario.php");
+                header("location:index.php");
             }
         }
 

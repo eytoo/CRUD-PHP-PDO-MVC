@@ -215,6 +215,8 @@ class UsuarioDao extends Conexion
         if (!is_null($usuario->getId())) {
             $id = $usuario->getId();
             $resultado->bindParam(":id", $id);
+        } else {
+            $resultado->bindParam(":privilegio", $privilegio);
         }
 
         $resultado->bindParam(":nombre", $nombre);
