@@ -47,7 +47,7 @@ $filas = UsuarioControlador::getUsuarios();
 									<td><?php echo getPrivilegio($usuario["privilegio"]) ?></td>
 									<td>
 										<a href="crear_usuario_form.php?id=<?php echo $usuario["id"] ?>" class="btn btn-success btn-sm">Editar</a>
-										<a href="eliminar_usuario_logic.php?id=<?php echo $usuario["id"] ?>" class="btn btn-danger btn-sm">Eliminar</a>
+										<a href="javascript:eliminar(confirm('¿Deséas eliminar este usuario?'),'eliminar_usuario_logic.php?id=<?php echo $usuario["id"] ?>');" class="btn btn-danger btn-sm">Eliminar</a>
 									</td>
 								</tr>
 								<?php }?>
@@ -60,5 +60,15 @@ $filas = UsuarioControlador::getUsuarios();
 	</div>
 
 </div><!-- /.container -->
+
+<script type="text/javascript">
+
+	function eliminar(confirmacion, url){
+		if(confirmacion){
+			window.location.href = url;
+		}
+	}
+
+</script>
 
 <?php include 'partials/footer.php';?>
